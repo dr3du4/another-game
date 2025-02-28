@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerPickup : MonoBehaviour
@@ -10,13 +11,17 @@ public class PlayerPickup : MonoBehaviour
 
     void Update()
     {
-        if (currentItem == null && Input.GetKeyDown(KeyCode.E))
+        if (currentItem == null && Input.GetKeyDown(KeyCode.Space))
         {
             TryPickUp();
         }
         else if (currentItem != null && Input.GetMouseButtonDown(1)) // Prawy przycisk myszy
         {
             ThrowItem();
+        }
+        else if (currentItem != null && Input.GetMouseButtonDown(0))
+        {
+            currentItem.itemUse();
         }
     }
 
@@ -38,7 +43,7 @@ public class PlayerPickup : MonoBehaviour
     {
         currentItem = item;
         item.gameObject.SetActive(false);
-        
+        item.isThrowed = false;
         Debug.Log("Podniesiono: " + item.itemName);
         oldItem = item;
         //Destroy(item);
@@ -49,6 +54,7 @@ public class PlayerPickup : MonoBehaviour
         GameObject thrownItem = Instantiate(currentItem.gameObject, throwPoint.position, Quaternion.identity);
         
         thrownItem.SetActive(true);
+        thrownItem.GameObject().GetComponent<Item>().isThrowed = true;
         oldItem = currentItem;
         Destroy(oldItem.gameObject);
 
