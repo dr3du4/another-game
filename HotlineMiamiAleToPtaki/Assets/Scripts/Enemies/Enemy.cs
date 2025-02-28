@@ -9,23 +9,29 @@ public class Enemy : MonoBehaviour
     // detection radius
     // patrol path
     // attack range
+    [Header("Movement and patrol")]
     [SerializeField] 
     List<Transform> patrolPoints;
     [SerializeField]
     float movementSpeed = 5f;
-    [SerializeField]
-    float detectionRadius = 5f;
+
     int currentPatrolIndex = 0;
     
+    [Header("Detections")]
+    [SerializeField]
+    float detectionRadius = 5f;
 
-    CircleCollider2D col;
+    [Header("Attacks")]
+    [SerializeField]
+    float attackCooldown = 3f;
+    bool attackOnCooldown = false;
+    bool isAttacking = false;
+    
     Transform playerTransform;
 
     bool canPatrol = false;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        col = GetComponent<CircleCollider2D>();
         UpdateDetectionRadius();
 
         if (patrolPoints.Count > 0) 
@@ -34,9 +40,14 @@ public class Enemy : MonoBehaviour
         } 
     }
 
-    // Update is called once per frame
     void Update()
     {
+        if (!isAttacking){
+            MovementUpdate();
+        }
+    }
+
+    private void MovementUpdate(){
         if(canPatrol)
         {
             Patrol();   
@@ -48,7 +59,7 @@ public class Enemy : MonoBehaviour
     }
 
     private void UpdateDetectionRadius(){
-        col.radius = detectionRadius;
+        GetComponentInChildren<PlayerRadiusDetection>().UpdateDetectionRadius(detectionRadius);
     }
 
     private void Patrol(){
@@ -59,11 +70,36 @@ public class Enemy : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, patrolPoints[currentPatrolIndex].position, movementSpeed * Time.deltaTime);
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if(other.CompareTag("Player"))
+    public void OnPlayerEnteredDetectionRadius(Transform playerTransform)
+    {
+        canPatrol = false;
+        this.playerTransform = playerTransform;
+    }
+
+    public void OnPlayerEnteredAttackRadius(Transform playerTransform)
+    {
+        if(!attackOnCooldown)
         {
-            canPatrol = false;
-            playerTransform = other.transform;
+            StartCoroutine(AttackCooldown());
+            Attack(playerTransform);
         }
+    }
+
+    private IEnumerator AttackCooldown()
+    {
+        attackOnCooldown = true;
+        yield return new WaitForSeconds(attackCooldown);
+        attackOnCooldown = false;
+    }
+
+    protected virtual void Attack(Transform playerTransform)
+    {
+        Debug.Log("Attacking player");
+    }
+
+    protected IEnumerable LockMovementForAttack(float attackTime){
+        isAttacking = true;
+        yield return new WaitForSeconds(attackTime);
+        isAttacking = false;
     }
 }
