@@ -3,6 +3,7 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     public string itemName;
+    public bool isHeld = false;
     public bool isThrowed = false;
     private void Awake()
     {
@@ -17,6 +18,11 @@ public class Item : MonoBehaviour
             rb.linearVelocity *= 5f;
             rb.linearDamping = 5f;
         }
+    }
+
+    public bool canPickUp()
+    {
+        return !isHeld && !isThrowed;
     }
 
     public void itemUse()
