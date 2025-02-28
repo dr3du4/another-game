@@ -8,6 +8,9 @@ public class PlayerPickup : MonoBehaviour
 
     private Item currentItem;
     private Item oldItem;
+    [SerializeField]
+    GameObject itemHolder;
+
 
     void Update()
     {
@@ -31,7 +34,7 @@ public class PlayerPickup : MonoBehaviour
         foreach (Collider2D col in items)
         {
             Item item = col.GetComponent<Item>();
-            if (item != null)
+            if (item != null && item.canPickUp())
             {
                 PickUpItem(item);
                 break;
@@ -42,7 +45,8 @@ public class PlayerPickup : MonoBehaviour
     private void PickUpItem(Item item)
     {
         currentItem = item;
-        item.gameObject.SetActive(false);
+        item.transform.SetParent(itemHolder.transform);
+        //item.gameObject.SetActive(false);
         item.isThrowed = false;
         Debug.Log("Podniesiono: " + item.itemName);
         oldItem = item;
