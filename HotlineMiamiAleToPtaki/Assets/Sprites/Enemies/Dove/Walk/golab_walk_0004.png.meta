@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      golab_walk_0004_0: -4669326951720704988
+      golab_walk_0004_1: -5197301260430011946
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

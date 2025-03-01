@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Kogut_walk_0001_0: 851683538500055711
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
