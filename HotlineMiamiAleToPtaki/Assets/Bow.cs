@@ -10,4 +10,5 @@ public class Bow : RangeWeapon
             amunitions.Add(arrowPrefab); // Dodajemy "null" jako placeholder dla amunicji
         }
     }
+    
 }
