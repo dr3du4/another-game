@@ -1,5 +1,6 @@
 using System.Collections;
 using Unity.IO.LowLevel.Unsafe;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -62,6 +63,11 @@ public class Item : MonoBehaviour
 
         transform.Rotate(0, 0, zRotation);
 
+        ThrowItem(throwDirection, force);
+    }
+
+    protected virtual void ThrowItem(Vector2 throwDirection, float force)
+    {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if (rb != null)
         {
