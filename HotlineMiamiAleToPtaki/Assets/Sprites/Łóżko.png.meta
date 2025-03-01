@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 576dcf7e4caa91d43a5a56dd46f83a18
+guid: 194897ca2b853c841a9cba8638253a49
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8547103908344365439
-    second: "St\xF3\u0142_0"
-  - first:
-      213: 1742834746788430351
-    second: "St\xF3\u0142_1"
+      213: 338442243753429806
+    second: "\u0141\xF3\u017Cko_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "St\xF3\u0142_0"
+      name: "\u0141\xF3\u017Cko_0"
       rect:
         serializedVersion: 2
         x: 0
-        y: 716
-        width: 5
-        height: 10
+        y: 333
+        width: 1187
+        height: 942
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,30 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 18ef7c4a746926980800000000000000
-      internalID: -8547103908344365439
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "St\xF3\u0142_1"
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 68
-        width: 1165
-        height: 1098
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f024880e7facf2810800000000000000
-      internalID: 1742834746788430351
+      spriteID: e2bc8e37d6362b400800000000000000
+      internalID: 338442243753429806
       vertices: []
       indices: 
       edges: []
