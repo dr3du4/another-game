@@ -23,7 +23,7 @@ public class PlayerPickup : MonoBehaviour
         else if (currentItem != null && Input.GetMouseButtonDown(1)) // Prawy przycisk myszy
         {
             Vector2 throwDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
-            currentItem.tryThrowItem(throwDirection, throwForce);
+            currentItem.tryThrowItem(throwDirection, throwForce, transform.rotation.z);
             currentItem = null;
         }
         else if (currentItem != null && Input.GetMouseButtonDown(0))
