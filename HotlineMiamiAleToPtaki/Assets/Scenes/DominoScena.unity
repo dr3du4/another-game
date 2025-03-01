@@ -1118,7 +1118,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 12
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1730,6 +1730,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1518170112 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2722135740662380144, guid: 244c111beb4648b41a97e998c6124e35, type: 3}
+  m_PrefabInstance: {fileID: 7099344384607796232}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1518170114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518170112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 791f6358d1cfc424f8e3c5708f7d712b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1617141564
 GameObject:
   m_ObjectHideFlags: 0
@@ -7099,6 +7116,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chicken
       objectReference: {fileID: 0}
+    - target: {fileID: 4134485325885828698, guid: 5da874241f176664fbad32abe35a2caa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6644881540232248447, guid: 5da874241f176664fbad32abe35a2caa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.61
@@ -7212,6 +7233,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 555569945076455035, guid: 244c111beb4648b41a97e998c6124e35, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 555569945076455035, guid: 244c111beb4648b41a97e998c6124e35, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 2291523694267260803, guid: 244c111beb4648b41a97e998c6124e35, type: 3}
       propertyPath: m_Name
       value: Player
@@ -7266,7 +7295,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7131713202408769908, guid: 244c111beb4648b41a97e998c6124e35, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1202033975}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2722135740662380144, guid: 244c111beb4648b41a97e998c6124e35, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1518170114}
   m_SourcePrefab: {fileID: 100100000, guid: 244c111beb4648b41a97e998c6124e35, type: 3}
 --- !u!1001 &8069412371224190687
 PrefabInstance:
@@ -7276,6 +7308,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4210794215813543545, guid: 1392a9770fecbd24aa39a78e6461c26f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8487392924090223070, guid: 1392a9770fecbd24aa39a78e6461c26f, type: 3}
       propertyPath: m_Name
       value: Stick

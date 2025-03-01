@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Kasza w locie_0: -8657505799464661221
+      Kasza w locie_1: 5358460901718836958
+      Kasza w locie_2: -5294067690521847427
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
