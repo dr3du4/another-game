@@ -60,7 +60,6 @@ public class Item : MonoBehaviour
         transform.SetParent(null);
         OnItemThrowed();
 
-        Debug.Log("Rotating");
         transform.Rotate(0, 0, zRotation);
 
         Rigidbody2D rb = GetComponent<Rigidbody2D>();

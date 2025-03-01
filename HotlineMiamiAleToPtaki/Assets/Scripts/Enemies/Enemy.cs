@@ -30,14 +30,24 @@ public class Enemy : MonoBehaviour
     Transform playerTransform;
 
     bool canPatrol = false;
+
+    IState defaultState;
+
+    StateController stateController;
     void Start()
     {
         UpdateDetectionRadius();
+        stateController = GetComponent<StateController>();
 
         if (patrolPoints.Count > 0) 
         {
-            canPatrol = true;
+            PatrolState patrolState = new PatrolState(transform, patrolPoints, movementSpeed);
+            stateController.ChangeState(patrolState);
+            defaultState = patrolState;
         } 
+        else{
+            defaultState = new IdleState();
+        }
     }
 
     void Update()
@@ -50,7 +60,7 @@ public class Enemy : MonoBehaviour
     private void MovementUpdate(){
         if(canPatrol)
         {
-            Patrol();   
+            //Patrol();   
         }
         else if(playerTransform != null)
         {
@@ -70,10 +80,33 @@ public class Enemy : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, patrolPoints[currentPatrolIndex].position, movementSpeed * Time.deltaTime);
     }
 
+    public void OnEnteredGroatsDetectionRadius(Transform groatsTransform)
+    {
+        if(stateController.currentState is ChasingPlayerState)
+        {
+            return;
+        }
+        Debug.Log("Entered groats detection radius");
+        EatingState eatingState = new EatingState(transform, groatsTransform, movementSpeed);
+        stateController.ChangeState(eatingState);
+        detectionRadius -= 1f;
+        UpdateDetectionRadius();
+    }
+
+    public void OnExitedGroatsDetectionRadius()
+    {
+        if(stateController.currentState is ChasingPlayerState)
+        {
+            return;
+        }
+        stateController.ChangeState(defaultState);
+        detectionRadius += 1f;
+        UpdateDetectionRadius();
+    }
+
     public void OnPlayerEnteredDetectionRadius(Transform playerTransform)
     {
-        canPatrol = false;
-        this.playerTransform = playerTransform;
+        stateController.ChangeState(new ChasingPlayerState(transform, playerTransform, movementSpeed));
     }
 
     public void OnPlayerEnteredAttackRadius(Transform playerTransform)
@@ -83,6 +116,10 @@ public class Enemy : MonoBehaviour
             StartCoroutine(AttackCooldown());
             Attack(playerTransform);
         }
+    }
+
+    public IState GetCurrentState(){
+        return stateController.currentState;
     }
 
     private IEnumerator AttackCooldown()
