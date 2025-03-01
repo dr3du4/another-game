@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 32cbaea20d38b7f4eb4247f6a4c2c114
+guid: fbe0e63ed87f29846ab91d7876525e19
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7814549845023024341
-    second: "Sto\u0301\u0142_0"
+      213: -8841490917199087839
+    second: table_0
   - first:
-      213: 6821197691331347889
-    second: "Sto\u0301\u0142_1"
+      213: 70885313432537070
+    second: table_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,7 +103,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Sto\u0301\u0142_0"
+      name: table_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,14 +118,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b2b91d7b1542d8390800000000000000
-      internalID: -7814549845023024341
+      spriteID: 1277183ead6bc4580800000000000000
+      internalID: -8841490917199087839
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Sto\u0301\u0142_1"
+      name: table_1
       rect:
         serializedVersion: 2
         x: 6
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1b50586f823c9ae50800000000000000
-      internalID: 6821197691331347889
+      spriteID: ee740f621d5dbf000800000000000000
+      internalID: 70885313432537070
       vertices: []
       indices: 
       edges: []
