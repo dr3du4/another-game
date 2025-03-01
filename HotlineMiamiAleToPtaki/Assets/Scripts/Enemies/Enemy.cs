@@ -102,4 +102,9 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(attackTime);
         isAttacking = false;
     }
+
+    public void RegisterHit()
+    {
+        Debug.Log("Enemy hit");
+    }
 }
