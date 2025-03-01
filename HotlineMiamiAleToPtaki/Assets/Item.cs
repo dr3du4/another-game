@@ -1,6 +1,8 @@
+using System.Collections;
 using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class Item : MonoBehaviour
 {
     [SerializeField]
@@ -10,7 +12,7 @@ public class Item : MonoBehaviour
     public string itemName;
     public bool isHeld = false;
     public bool isThrowed = false;
-    private void Awake()
+    protected virtual void Awake()
     {
         gameObject.SetActive(true);
     }
@@ -45,5 +47,47 @@ public class Item : MonoBehaviour
 
     protected virtual void itemUse(){
         Debug.Log("item use");
+    }
+
+    protected virtual bool CanThrow(){
+        return isHeld && !isThrowed;
+    }
+
+    public void tryThrowItem(Vector2 throwDirection, float force){
+        if (!CanThrow()) return;
+        isHeld = false;
+        isThrowed = true;
+        transform.SetParent(null);
+        OnItemThrowed();
+
+        float angle = Mathf.Atan2(throwDirection.y, throwDirection.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.linearVelocity = throwDirection * force;
+            StartCoroutine(ReduceVelocity(rb));
+        }
+    }
+
+    private IEnumerator ReduceVelocity(Rigidbody2D rb){
+        while(rb.linearVelocity.magnitude > 2f){
+            rb.linearVelocity *= 0.9f;
+            yield return new WaitForSeconds(0.1f);
+        }
+        rb.linearVelocity = Vector2.zero;
+
+        isThrowed = false;
+
+        OnItemFinishedFlying();
+    }
+
+    protected void OnItemThrowed(){
+        Debug.Log("Item throwed");
+    }
+
+    protected void OnItemFinishedFlying(){
+        Debug.Log("Item finished flying");
     }
 }
