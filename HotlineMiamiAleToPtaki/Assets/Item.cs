@@ -1,7 +1,12 @@
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
 public class Item : MonoBehaviour
 {
+    [SerializeField]
+    float useCooldown = 2f;
+
+    bool canUse = true;
     public string itemName;
     public bool isHeld = false;
     public bool isThrowed = false;
@@ -25,8 +30,20 @@ public class Item : MonoBehaviour
         return !isHeld && !isThrowed;
     }
 
-    public void itemUse()
+    public void tryUseItem()
     {
+        if(canUse){
+            itemUse();
+            canUse = false;
+            Invoke("resetUse", useCooldown);
+        }
+    }
+
+    private void resetUse(){
+        canUse = true;
+    }
+
+    protected virtual void itemUse(){
         Debug.Log("item use");
     }
 }
