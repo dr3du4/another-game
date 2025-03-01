@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      szczur_animacja_2.02_0: 4497339494917647900
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
