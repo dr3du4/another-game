@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      T_siekierka_0: -607196789253035134
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

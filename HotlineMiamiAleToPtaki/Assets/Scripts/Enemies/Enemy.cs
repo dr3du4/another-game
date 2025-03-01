@@ -170,7 +170,13 @@ public class Enemy : MonoBehaviour
         Debug.Log("Enemy died");
         stateController.ChangeState(new DeadState(this));
         isDead = true;
-        //GetComponent<SpriteRenderer>().sprite = deadSprite;
+        // disable animations
+        if(deadSprite != null){
+            GetComponentInChildren<SpriteRenderer>().sprite = deadSprite;
+        }
+        else{
+            Debug.LogError("Dead sprite not set - not game breaking but please set it");
+        }
         StartCoroutine(StopParticleEmission(blood, 0.07f));
     }
 
