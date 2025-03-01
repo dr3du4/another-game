@@ -237,6 +237,11 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!4 &139140603 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7131713202408769908, guid: 244c111beb4648b41a97e998c6124e35, type: 3}
+  m_PrefabInstance: {fileID: 7099344384607796232}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &160839890 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6644881540232248447, guid: 5da874241f176664fbad32abe35a2caa, type: 3}
@@ -1063,6 +1068,7 @@ GameObject:
   - component: {fileID: 1043082376}
   - component: {fileID: 1043082375}
   - component: {fileID: 1043082378}
+  - component: {fileID: 1043082379}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1188,6 +1194,22 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &1043082379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043082374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc274eef3d5b2244adf3747d4c74aee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 139140603}
+  followSpeed: 5
+  cursorInfluence: 2
+  cursorThreshold: 0.3
 --- !u!1 &1076826335
 GameObject:
   m_ObjectHideFlags: 0
