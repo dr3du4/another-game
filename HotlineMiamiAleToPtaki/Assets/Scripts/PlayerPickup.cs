@@ -55,6 +55,7 @@ public class PlayerPickup : MonoBehaviour
         item.isHeld = true;
         item.transform.localPosition = Vector3.zero;
         item.transform.localRotation = Quaternion.identity;
+        //item.transform.localRotation = Quaternion.Euler(0, 0, 45);
         Debug.Log("Podniesiono: " + item.itemName);
     }
 }
