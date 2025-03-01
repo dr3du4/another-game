@@ -13,6 +13,7 @@ public class Item : MonoBehaviour
     public string itemName;
     public bool isHeld = false;
     public bool isThrowed = false;
+    public int durability = 5;
     protected virtual void Awake()
     {
         gameObject.SetActive(true);
@@ -37,6 +38,12 @@ public class Item : MonoBehaviour
     {
         if(canUse){
             itemUse();
+            Debug.Log("durability: " + durability);
+            durability--;
+            if (durability <= 0)
+            {
+                DestroyItem();
+            }
             canUse = false;
             Invoke("resetUse", useCooldown);
         }
@@ -46,7 +53,8 @@ public class Item : MonoBehaviour
         canUse = true;
     }
 
-    protected virtual void itemUse(){
+    protected virtual void itemUse()
+    {
         Debug.Log("item use");
     }
 
@@ -71,6 +79,12 @@ public class Item : MonoBehaviour
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if (rb != null)
         {
+            Debug.Log("durability: " + durability);
+            durability--;
+            if (durability <= 0)
+            {
+                DestroyItem();
+            }
             rb.linearVelocity = throwDirection * force;
             StartCoroutine(ReduceVelocity(rb));
         }
@@ -94,5 +108,10 @@ public class Item : MonoBehaviour
 
     protected void OnItemFinishedFlying(){
         Debug.Log("Item finished flying");
+    }
+
+    void DestroyItem()
+    {
+        Destroy(gameObject);
     }
 }
