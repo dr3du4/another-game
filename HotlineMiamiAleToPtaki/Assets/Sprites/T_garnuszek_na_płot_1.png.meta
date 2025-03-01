@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "T_garnuszek_na_p\u0142ot_1_0": 2200410273373673861
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -234,7 +234,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Regal 1_0: -148126823563536775
+      Regal 1_1: -6077062653022412978
+      Regal 1_2: 4208234475588978943
+      Regal 1_3: -2551247314852604138
+      Regal 1_4: 4817627314665724050
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

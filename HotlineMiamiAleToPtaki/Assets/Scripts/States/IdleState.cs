@@ -7,7 +7,7 @@ public class IdleState : IState
         Debug.Log("Entering idle state");
     }
 
-    public void updateState()
+    public void UpdateState()
     {
         Debug.Log("Idle state");
     }

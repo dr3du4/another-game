@@ -9,6 +9,8 @@ public class Item : MonoBehaviour
     [SerializeField]
     float useCooldown = 2f;
 
+    protected DamageArea damageArea;
+
     bool canUse = true;
     public string itemName;
     public bool isHeld = false;
@@ -17,6 +19,7 @@ public class Item : MonoBehaviour
     protected virtual void Awake()
     {
         gameObject.SetActive(true);
+        damageArea = GetComponentInChildren<DamageArea>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -77,6 +80,7 @@ public class Item : MonoBehaviour
     protected virtual void ThrowItem(Vector2 throwDirection, float force)
     {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        damageArea.isDealingDamage = true;
         if (rb != null)
         {
             Debug.Log("durability: " + durability);
@@ -98,6 +102,7 @@ public class Item : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
 
         isThrowed = false;
+        damageArea.isDealingDamage = false;
 
         OnItemFinishedFlying();
     }
