@@ -309,7 +309,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "kocio\u0142.01 1_0": 8986148241188757422
+      "kocio\u0142.01 1_1": -6579150646008699018
+      "kocio\u0142.01 1_2": -7699753993231504982
+      "kocio\u0142.01 1_3": -617008111967652398
+      "kocio\u0142.01 1_4": -1193455325931328393
+      "kocio\u0142.01 1_5": -6472241512221701764
+      "kocio\u0142.01 1_6": -292756657736393253
+      "kocio\u0142.01 1_7": 6075970039305792634
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

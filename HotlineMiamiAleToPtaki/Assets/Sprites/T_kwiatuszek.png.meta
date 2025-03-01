@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      T_kwiatuszek_0: 2347406687984450073
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

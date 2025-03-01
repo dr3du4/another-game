@@ -18,7 +18,7 @@ public class EatingState : IState
         Debug.Log("Entering eating state");
     }
 
-    public void updateState()
+    public void UpdateState()
     {
         if(Vector2.Distance(transform.position, groatsTransform.position) > 1f)
         {
