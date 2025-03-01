@@ -4,8 +4,14 @@ using UnityEngine;
 public class StateController : MonoBehaviour
 {
     public IState currentState;
+    Enemy enemy;
+    void Awake()
+    {
+        enemy = GetComponent<Enemy>();
+    }
     public void ChangeState(IState newState)
     {
+        if(enemy.isDead) return;
         if (currentState != null)
         {
             currentState.OnExit();
@@ -18,7 +24,7 @@ public class StateController : MonoBehaviour
     {
         if (currentState != null)
         {
-            currentState.updateState();
+            currentState.UpdateState();
         }
     }
 }
@@ -26,6 +32,6 @@ public class StateController : MonoBehaviour
 public interface IState
 {
     public void OnEnter();
-    public void updateState();
+    public void UpdateState();
     public void OnExit();
 }

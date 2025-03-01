@@ -21,7 +21,7 @@ public class PatrolState : IState
         Debug.Log("Entering patrol state");
     }
 
-    public void updateState()
+    public void UpdateState()
     {
         if(Vector2.Distance(transform.position, patrolPoints[currentPatrolIndex].position) < 0.5f)
         {

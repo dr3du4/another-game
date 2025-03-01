@@ -30,4 +30,9 @@ public class playerMovement : MonoBehaviour
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = angle;
     }
+
+    public void TakeDamage()
+    {
+        Debug.Log("Player Hit and died");
+    }
 }

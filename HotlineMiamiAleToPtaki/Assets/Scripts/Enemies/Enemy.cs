@@ -3,7 +3,9 @@ using UnityEngine;
 using UnityEngine.Scripting.APIUpdating;
 using System.Collections;
 using Unity.VisualScripting;
+using UnityEditor.ShaderGraph.Internal;
 
+[RequireComponent(typeof(StateController))]
 public class Enemy : MonoBehaviour
 {
     // detection radius
@@ -26,6 +28,9 @@ public class Enemy : MonoBehaviour
     float attackCooldown = 3f;
     bool attackOnCooldown = false;
     bool isAttacking = false;
+
+    [SerializeField]
+    Sprite deadSprite;
     
     Transform playerTransform;
 
@@ -34,6 +39,8 @@ public class Enemy : MonoBehaviour
     IState defaultState;
 
     StateController stateController;
+
+    public bool isDead { get; private set; }
     void Start()
     {
         UpdateDetectionRadius();
@@ -106,7 +113,7 @@ public class Enemy : MonoBehaviour
 
     public void OnPlayerEnteredDetectionRadius(Transform playerTransform)
     {
-        stateController.ChangeState(new ChasingPlayerState(transform, playerTransform, movementSpeed));
+        stateController.ChangeState(new ChasingPlayerState(transform, playerTransform, movementSpeed, this));
     }
 
     public void OnPlayerEnteredAttackRadius(Transform playerTransform)
@@ -132,6 +139,7 @@ public class Enemy : MonoBehaviour
     protected virtual void Attack(Transform playerTransform)
     {
         Debug.Log("Attacking player");
+        //play attack animation
     }
 
     protected IEnumerable LockMovementForAttack(float attackTime){
@@ -142,6 +150,44 @@ public class Enemy : MonoBehaviour
 
     public void RegisterHit()
     {
-        Debug.Log("Enemy hit");
+        Die();
+    }
+
+    public void TryAttackPlayer(Transform playerTransform)
+    {
+        if(!attackOnCooldown)
+        {
+            Attack(playerTransform);
+        }
+
+    }
+
+    protected virtual void Die()
+    {
+        GetComponent<Collider2D>().enabled = false;
+        ParticleSystem blood = GetComponentInChildren<ParticleSystem>();
+        blood.Play();
+        Debug.Log("Enemy died");
+        stateController.ChangeState(new DeadState(this));
+        isDead = true;
+        //GetComponent<SpriteRenderer>().sprite = deadSprite;
+        StartCoroutine(StopParticleEmission(blood, 0.07f));
+    }
+
+    IEnumerator StopParticleEmission(ParticleSystem particleSystem, float time)
+    {
+        yield return new WaitForSeconds(time);
+        particleSystem.Stop();
+
+        // Stop particle movement by setting velocity to zero
+        var particles = new ParticleSystem.Particle[particleSystem.main.maxParticles];
+        int particleCount = particleSystem.GetParticles(particles);
+
+        for (int i = 0; i < particleCount; i++)
+        {
+            particles[i].velocity = Vector3.zero;
+        }
+
+        particleSystem.SetParticles(particles, particleCount);
     }
 }
