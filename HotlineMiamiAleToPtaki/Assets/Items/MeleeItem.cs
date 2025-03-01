@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class MeleeItem : Item
@@ -18,17 +19,42 @@ public class MeleeItem : Item
         return isHeld && !isThrowed && !isSwinging;
     }
 
+    [SerializeField] private float swingDuration = 0.2f; // Czas trwania jednego etapu
+    [SerializeField] private Transform pivotPoint; // Punkt obrotu (np. rękojeść)
+    
+
     protected override void itemUse()
     {
         if (isSwinging) return;
-        animator.SetTrigger("triggerSwing");
-        Debug.Log("trying to play animation");
+        Debug.Log("Swinging sword using Quaternion in multiple steps!");
+
         isSwinging = true;
-        Invoke("resetSwing", swingAnimation.length);
+        StartCoroutine(SwingSequence());
     }
 
-    private void resetSwing()
+    private IEnumerator SwingSequence()
     {
-        isSwinging = false;
+        yield return RotateToAngle(-75); // Pierwszy ruch do -45°
+        yield return RotateToAngle(90);  // Następnie do 50°
+        yield return RotateToAngle(0);   // Powrót do 0°
+        
+        isSwinging = false; // Koniec zamachu
+    }
+
+    private IEnumerator RotateToAngle(float targetAngle)
+    {
+        float elapsedTime = 0f;
+        Quaternion startRotation = transform.localRotation;
+        Quaternion targetRotation = Quaternion.Euler(0, 0, targetAngle);
+
+        while (elapsedTime < swingDuration)
+        {
+            float t = elapsedTime / swingDuration;
+            transform.localRotation = Quaternion.Slerp(startRotation, targetRotation, t);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.localRotation = targetRotation; // Dokładne ustawienie końcowego kąta
     }
 }
