@@ -29,6 +29,7 @@ public class MeleeItem : Item
         Debug.Log("Swinging sword using Quaternion in multiple steps!");
 
         isSwinging = true;
+        damageArea.isDealingDamage = true;
         StartCoroutine(SwingSequence());
     }
 
@@ -39,6 +40,7 @@ public class MeleeItem : Item
         yield return RotateToAngle(0);   // Powrót do 0°
         
         isSwinging = false; // Koniec zamachu
+        damageArea.isDealingDamage = false;
     }
 
     private IEnumerator RotateToAngle(float targetAngle)
