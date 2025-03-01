@@ -36,4 +36,8 @@ public class playerMovement : MonoBehaviour
     {
         rb.linearVelocity = movement.normalized * moveSpeed;
     }
+    public void TakeDamage()
+    {
+        Debug.Log("Player Hit and died");
+    }
 }
