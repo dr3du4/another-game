@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Kurczak_smierc_0: 6565838977902035736
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

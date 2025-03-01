@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Kogut_atak_0002_0: -1940329313068824711
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
