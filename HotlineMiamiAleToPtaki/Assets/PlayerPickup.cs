@@ -1,4 +1,5 @@
 using System;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -22,7 +23,7 @@ public class PlayerPickup : MonoBehaviour
         else if (currentItem != null && Input.GetMouseButtonDown(1)) // Prawy przycisk myszy
         {
             Vector2 throwDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
-            currentItem.throwItem(throwDirection, throwForce);
+            currentItem.tryThrowItem(throwDirection, throwForce);
             currentItem = null;
         }
         else if (currentItem != null && Input.GetMouseButtonDown(0))
@@ -52,6 +53,8 @@ public class PlayerPickup : MonoBehaviour
         item.transform.SetParent(itemHolder.transform);
         item.isThrowed = false;
         item.isHeld = true;
+        item.transform.localPosition = Vector3.zero;
+        item.transform.localRotation = Quaternion.identity;
         Debug.Log("Podniesiono: " + item.itemName);
     }
 }

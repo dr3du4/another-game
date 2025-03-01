@@ -12,7 +12,7 @@ public class Item : MonoBehaviour
     public string itemName;
     public bool isHeld = false;
     public bool isThrowed = false;
-    private void Awake()
+    protected virtual void Awake()
     {
         gameObject.SetActive(true);
     }
@@ -49,11 +49,19 @@ public class Item : MonoBehaviour
         Debug.Log("item use");
     }
 
-    public void throwItem(Vector2 throwDirection, float force){
+    protected virtual bool CanThrow(){
+        return isHeld && !isThrowed;
+    }
+
+    public void tryThrowItem(Vector2 throwDirection, float force){
+        if (!CanThrow()) return;
         isHeld = false;
         isThrowed = true;
         transform.SetParent(null);
         OnItemThrowed();
+
+        float angle = Mathf.Atan2(throwDirection.y, throwDirection.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if (rb != null)
