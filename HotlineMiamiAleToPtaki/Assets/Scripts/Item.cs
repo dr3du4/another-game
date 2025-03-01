@@ -53,15 +53,15 @@ public class Item : MonoBehaviour
         return isHeld && !isThrowed;
     }
 
-    public void tryThrowItem(Vector2 throwDirection, float force){
+    public void tryThrowItem(Vector2 throwDirection, float force, float zRotation){
         if (!CanThrow()) return;
         isHeld = false;
         isThrowed = true;
         transform.SetParent(null);
         OnItemThrowed();
 
-        float angle = Mathf.Atan2(throwDirection.y, throwDirection.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        Debug.Log("Rotating");
+        transform.Rotate(0, 0, zRotation);
 
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if (rb != null)
