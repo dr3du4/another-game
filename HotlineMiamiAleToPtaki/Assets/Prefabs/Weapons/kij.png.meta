@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 088c9f3e328c4b149b60335fd8f3b67a
+guid: 234a427831ca9044a87811a234e04dcf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4497339494917647900
-    second: szczur_animacja_2.02_0
+      213: 1971877654357935959
+    second: kij_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: szczur_animacja_2.02_0
+      name: kij_0
       rect:
         serializedVersion: 2
-        x: 19
-        y: 0
-        width: 364
-        height: 440
+        x: 0
+        y: 2
+        width: 316
+        height: 594
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c1ea6e45172c96e30800000000000000
-      internalID: 4497339494917647900
+      spriteID: 757098877448d5b10800000000000000
+      internalID: 1971877654357935959
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      szczur_animacja_2.02_0: 4497339494917647900
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
