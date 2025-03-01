@@ -14,12 +14,12 @@ public class RangeWeapon : Item
 
     protected override void itemUse()
     {
-        // Sprawdzamy, czy mamy amunicję (czy jest strzała do wystrzelenia)
-                if (amunitions.Count > 0)
-                {
-                    GameObject arrow = Instantiate(amunitions[0], shootPoint.position, shootPoint.rotation);
-                    
-                    amunitions.RemoveAt(0); 
-                }
+        if (amunitions.Count > 0)
+        {
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            GameObject arrow = Instantiate(amunitions[0], shootPoint.position, shootPoint.rotation);
+            arrow.GetComponent<Arrow>().Initialize(mousePosition);
+            amunitions.RemoveAt(0); 
+        }
     }
 }
