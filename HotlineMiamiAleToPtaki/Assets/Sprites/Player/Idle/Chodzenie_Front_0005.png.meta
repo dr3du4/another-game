@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Chodzenie_Front_0005_0: 1755628440168563732
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

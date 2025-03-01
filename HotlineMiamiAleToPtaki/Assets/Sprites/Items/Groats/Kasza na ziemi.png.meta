@@ -234,7 +234,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Kasza na ziemi_0: 794498637241045818
+      Kasza na ziemi_1: 1503042597014213457
+      Kasza na ziemi_2: -234266539981092858
+      Kasza na ziemi_3: 2802702754492780144
+      Kasza na ziemi_4: -2117646954749984581
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
