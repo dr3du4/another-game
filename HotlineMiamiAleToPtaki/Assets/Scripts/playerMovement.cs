@@ -3,31 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class playerMovement : MonoBehaviour
-{
+{ 
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
-    public Camera cam;
-
+    public Animator animator;
+    private SpriteRenderer spriteRenderer;
     private Vector2 movement;
-    private Vector2 mousePos;
+
+    void Start()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>(); // Pobieramy SpriteRenderer
+    }
 
     void Update()
     {
-        
+        // Pobieranie wejścia
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-        
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+
+        // Sprawdzenie, czy gracz się porusza
+        bool isMoving = movement.sqrMagnitude > 0;
+        animator.SetBool("IsMoving", isMoving);
+
+        if (isMoving)
+        {
+            animator.SetFloat("MoveX", movement.x);
+            animator.SetFloat("MoveY", movement.y);
+        }
     }
 
     void FixedUpdate()
     {
-        
         rb.linearVelocity = movement.normalized * moveSpeed;
-        
-        
-        Vector2 lookDir = mousePos - rb.position;
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-        rb.rotation = angle;
     }
 }
