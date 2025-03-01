@@ -9,7 +9,7 @@ public class IdleState : IState
 
     public void UpdateState()
     {
-        Debug.Log("Idle state");
+        return;
     }
 
     public void OnExit()
