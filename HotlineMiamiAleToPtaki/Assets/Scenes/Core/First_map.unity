@@ -8262,6 +8262,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3854422498881028265, guid: 674553404a04d7a47b2e3f4ef152b807, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5014006166049179165, guid: 674553404a04d7a47b2e3f4ef152b807, type: 3}
       propertyPath: m_Name
       value: Rat
