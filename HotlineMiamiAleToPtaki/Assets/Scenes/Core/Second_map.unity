@@ -7407,7 +7407,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6020117993827023764, guid: 0603c1cee411a7847bc13c37625f9c5a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -37618,7 +37618,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6020117993827023764, guid: 0603c1cee411a7847bc13c37625f9c5a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8792128040628590812, guid: 0603c1cee411a7847bc13c37625f9c5a, type: 3}
       propertyPath: patrolPoints.Array.size
@@ -38282,7 +38282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6020117993827023764, guid: 0603c1cee411a7847bc13c37625f9c5a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -38702,7 +38702,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1224828137217647485, guid: 1ed6872731be25b4eaf33019ead3d747, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5419368993467053360, guid: 1ed6872731be25b4eaf33019ead3d747, type: 3}
       propertyPath: m_LocalScale.x
@@ -38998,7 +38998,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1224828137217647485, guid: 1ed6872731be25b4eaf33019ead3d747, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5419368993467053360, guid: 1ed6872731be25b4eaf33019ead3d747, type: 3}
       propertyPath: m_LocalScale.x
@@ -40062,7 +40062,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4134485325885828698, guid: 5da874241f176664fbad32abe35a2caa, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6644881540232248447, guid: 5da874241f176664fbad32abe35a2caa, type: 3}
       propertyPath: m_LocalScale.x
