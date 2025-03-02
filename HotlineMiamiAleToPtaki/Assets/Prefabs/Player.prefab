@@ -113,6 +113,7 @@ MonoBehaviour:
   animator: {fileID: 4249485337554266962}
   isDead: 0
   deadPlayerSprite: {fileID: -7992013193629863669, guid: 569b003397fe05941acadc699336df04, type: 3}
+  deathSound: {fileID: 8300000, guid: 1f0f93219e59e3142b6ae1d0eeda50d0, type: 3}
 --- !u!50 &4344749150432255599
 Rigidbody2D:
   serializedVersion: 5

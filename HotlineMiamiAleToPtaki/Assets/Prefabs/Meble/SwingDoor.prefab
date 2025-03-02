@@ -140,6 +140,8 @@ MonoBehaviour:
   door: {fileID: 3591042006862163398}
   maxAngle: 90
   swingSpeed: 360
+  openSound: {fileID: 8300000, guid: e0c6bfc0fdcdae24da491c1e70b4b759, type: 3}
+  closeSound: {fileID: 8300000, guid: fbca8d20186c72848b3198cdf4e980d7, type: 3}
 --- !u!1 &7436192273474364338
 GameObject:
   m_ObjectHideFlags: 0
