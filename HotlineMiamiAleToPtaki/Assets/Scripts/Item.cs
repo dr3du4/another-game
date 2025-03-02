@@ -70,8 +70,7 @@ public class Item : MonoBehaviour
         isHeld = false;
         isThrowed = true;
         transform.SetParent(null);
-        OnItemThrowed();
-
+        
         transform.Rotate(0, 0, zRotation);
 
         ThrowItem(throwDirection, force);
@@ -80,6 +79,7 @@ public class Item : MonoBehaviour
     protected virtual void ThrowItem(Vector2 throwDirection, float force)
     {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        OnItemThrown();
         damageArea.isDealingDamage = true;
         if (rb != null)
         {
@@ -107,11 +107,11 @@ public class Item : MonoBehaviour
         OnItemFinishedFlying();
     }
 
-    protected void OnItemThrowed(){
+    protected virtual void OnItemThrown(){
         Debug.Log("Item throwed");
     }
 
-    protected void OnItemFinishedFlying(){
+    protected virtual void OnItemFinishedFlying(){
         Debug.Log("Item finished flying");
     }
 
