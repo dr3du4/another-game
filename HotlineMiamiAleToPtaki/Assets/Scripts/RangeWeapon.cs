@@ -12,7 +12,7 @@ public class RangeWeapon : Item
         amunitions = new List<GameObject>(amunitionAmount);
     }
 
-    protected  void itemUse()
+    protected override void itemUse()
     {
         if (amunitions.Count > 0)
         {
