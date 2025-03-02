@@ -26,6 +26,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Core/Third_map.unity
     guid: 3b1c9081d7591b04c994d1be02e6ca58
+  - enabled: 1
+    path: Assets/Scenes/Core/Cut_scene 4.unity
+    guid: 3b38f0919716ed244a9bebc556235e85
+  - enabled: 1
+    path: Assets/Scenes/Core/End_Screen.unity
+    guid: 83f990cfd060d5f4b89b4e20899d2144
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
