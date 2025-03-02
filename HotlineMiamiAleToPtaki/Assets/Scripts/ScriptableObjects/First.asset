@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: adea39b9785c44ca82ebd82c2963da72, type: 3}
-  m_Name: New Dialog Object
+  m_Name: First
   m_EditorClassIdentifier: 
   dialogue:
-  - "Jest tam. My\u015Bli, \u017Ce go nie widz\u0119. Ale ja wiem. One zawsze patrz\u0105.
-    Noc\u0105. Za dnia. Gdy \u015Bpi\u0119. Gdy jem. Nawet gdy\u2026 Oddaj\u0119
-    si\u0119 modlitwie. Gapi\u0105 si\u0119. Jakby zna\u0142y moje my\u015Bli\u2026"
+  - "Je tam. My\u015Bli, i\u017Ce go niy widz\u014Dm. Ale wiem. \xD4ni dycki \xF4gl\u014Dndaj\u014Dm.
+    W nocy. W czasie dnia. Kedy \u015Bpiyj\u014Dm. Kedy jedz\u014Dm. Nawet kedy...
+    po\u015Bwiyncaj\u014Dm sie rzykaniu. Gapi\u014Dm sie. Jakby znali moje my\u015Bli..."
   - To nie urojenia. To prawda.
-  - "Tak\u2026 Tak\u2026 Widz\u0119 ci\u0119, przekl\u0119ty kurze synu. Je\u015Bli
-    to wojna, to niechaj b\u0119dzie wojna!"
+  - "Tak... Tak... Widz\u014Dm ci, przekl\u014Dn\u014Dny syn kurczaka. Je\u017Ali
+    to wojna, niech to bydzie wojna!"
