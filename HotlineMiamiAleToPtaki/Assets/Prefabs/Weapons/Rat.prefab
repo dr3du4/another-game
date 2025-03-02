@@ -140,7 +140,7 @@ MonoBehaviour:
   isThrowed: 0
   durability: 5
   groundObjectPrefab: {fileID: 2903664009032976362, guid: b7b485ff17a562441b6802be1b4f0706, type: 3}
-  flyingItemSprite: {fileID: -4950349251517307520, guid: c91705c214f53884497ded48a16a52b1, type: 3}
+  flyingItemSprite: {fileID: 4497339494917647900, guid: 088c9f3e328c4b149b60335fd8f3b67a, type: 3}
 --- !u!1 &6094179593446123122
 GameObject:
   m_ObjectHideFlags: 0
