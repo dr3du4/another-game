@@ -271,11 +271,11 @@ PrefabInstance:
     - target: {fileID: 405326316474524267, guid: 57403ed127961d447880e145d0e3f5bd, type: 3}
       propertyPath: m_Resource
       value: 
-      objectReference: {fileID: 8300000, guid: 820517b4a59a1824fac44a14736961c5, type: 3}
+      objectReference: {fileID: 8300000, guid: b45ceeb3fb3156c46894041793c61a8b, type: 3}
     - target: {fileID: 405326316474524267, guid: 57403ed127961d447880e145d0e3f5bd, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 820517b4a59a1824fac44a14736961c5, type: 3}
+      objectReference: {fileID: 8300000, guid: b45ceeb3fb3156c46894041793c61a8b, type: 3}
     - target: {fileID: 938574665088098026, guid: 57403ed127961d447880e145d0e3f5bd, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -364,10 +364,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4835421341033381380, guid: 57403ed127961d447880e145d0e3f5bd, type: 3}
-      propertyPath: testDialogue
-      value: 
-      objectReference: {fileID: 11400000, guid: 7e325ffb023396948b45641b42d1e22e, type: 2}
     - target: {fileID: 4835421341033381380, guid: 57403ed127961d447880e145d0e3f5bd, type: 3}
       propertyPath: nextSceneName
       value: Third_map
