@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adea39b9785c44ca82ebd82c2963da72, type: 3}
+  m_Name: New Dialog Object
+  m_EditorClassIdentifier: 
+  dialogue:
+  - "Jest tam. My\u015Bli, \u017Ce go nie widz\u0119. Ale ja wiem. One zawsze patrz\u0105.
+    Noc\u0105. Za dnia. Gdy \u015Bpi\u0119. Gdy jem. Nawet gdy\u2026 Oddaj\u0119
+    si\u0119 modlitwie. Gapi\u0105 si\u0119. Jakby zna\u0142y moje my\u015Bli\u2026"
+  - To nie urojenia. To prawda.
+  - "Tak\u2026 Tak\u2026 Widz\u0119 ci\u0119, przekl\u0119ty kurze synu. Je\u015Bli
+    to wojna, to niechaj b\u0119dzie wojna!"
