@@ -472,6 +472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   killCounterSlider: {fileID: 6778948901223022908}
   berserkIcon: {fileID: 8077753821841896}
+  berserkSound: {fileID: 8300000, guid: d5cd0f1e7b460624ea1ce86d70a8f290, type: 3}
 --- !u!1 &2639931999285484538
 GameObject:
   m_ObjectHideFlags: 0

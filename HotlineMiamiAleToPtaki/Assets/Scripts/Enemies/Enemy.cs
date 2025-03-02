@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.Scripting.APIUpdating;
 using System.Collections;
 using Unity.VisualScripting;
-using UnityEditor.ShaderGraph.Internal;
 using System.Linq;
 
 [RequireComponent(typeof(StateController))]
@@ -25,7 +24,7 @@ public class Enemy : MonoBehaviour
     [Header("Attacks")]
     [SerializeField]
     float attackCooldown = 3f;
-    bool isAttacking = false;
+    public bool isAttacking = false;
 
     [SerializeField]
     Sprite deadSprite;

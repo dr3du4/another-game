@@ -76,11 +76,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84aa85fac0a886c49a44cc9a3c6a358b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useCooldown: 2
   itemName: 
   isHeld: 0
   isThrowed: 0
+  durability: 5
   swingAnimation: {fileID: 7400000, guid: 22bdda882f8d280499abecfdaf279554, type: 2}
+  swingDuration: 0.2
+  pivotPoint: {fileID: 0}
 --- !u!70 &5606912113085112357
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -215,7 +217,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -309,3 +311,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 140e9b0cface35d4190582f9372d0ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDealingDamage: 0

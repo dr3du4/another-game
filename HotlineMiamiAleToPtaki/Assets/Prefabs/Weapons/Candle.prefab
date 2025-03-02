@@ -82,6 +82,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 140e9b0cface35d4190582f9372d0ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDealingDamage: 0
 --- !u!1 &8726708196551271067
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +158,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 2179478984088875809, guid: ddaa5daf1ca40324381693510152c4cc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -199,7 +200,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.8, y: 1.42, z: -0.002311205}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3921220381404784743}
@@ -245,10 +246,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84aa85fac0a886c49a44cc9a3c6a358b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useCooldown: 2
   itemName: 
   isHeld: 0
   isThrowed: 0
+  durability: 5
   swingAnimation: {fileID: 7400000, guid: 22bdda882f8d280499abecfdaf279554, type: 2}
   swingDuration: 0.2
   pivotPoint: {fileID: 0}
