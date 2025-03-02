@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Zepsuta proca_0: -1157125924349151947
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

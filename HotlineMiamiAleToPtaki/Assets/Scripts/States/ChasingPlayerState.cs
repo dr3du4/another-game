@@ -27,7 +27,7 @@ public class ChasingPlayerState : IState
             }
             enemy.TryAttackPlayer(playerTransform);
         }
-        else{
+        else if (!enemy.isAttacking){
             enemy.Move(playerTransform);
         }
     }

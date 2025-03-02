@@ -20,6 +20,7 @@ public class PlayerPickup : MonoBehaviour
 
     public void setDead(){
         isDead = true;
+        Destroy(itemHolder);
     }
 
     void Update()

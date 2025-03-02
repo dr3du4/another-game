@@ -70,8 +70,9 @@ MonoBehaviour:
   movementSpeed: 5
   detectionRadius: 5
   attackCooldown: 3
+  isAttacking: 0
   deadSprite: {fileID: -5082784847660883330, guid: 35d3370805860ec4a8ed932c88bbb69d, type: 3}
-  deathSound: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: 0a7231575a1edb14b8066fff63f96c69, type: 3}
   collisionCollider: {fileID: 5859605894038797208}
 --- !u!50 &379811997634504094
 Rigidbody2D:

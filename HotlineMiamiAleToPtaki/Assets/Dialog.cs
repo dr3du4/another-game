@@ -15,6 +15,8 @@ public class dialog : MonoBehaviour
     
     private typewriter typewritterEffect;
 
+    public string nextSceneName;
+
     private void Start()
     {
        // textLabel.text = "Hello!\n This is my new line.";
@@ -25,6 +27,13 @@ public class dialog : MonoBehaviour
        
         ShowDialogueChange(testDialogue);
         
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.U)){
+            SceneManager.LoadScene(nextSceneName);
+        }
     }
 
     private void ShowDialogueChange(DialogObject dialogueObject)
@@ -45,7 +54,7 @@ public class dialog : MonoBehaviour
 
         }
         CloseDialogueBox();
-        //SceneManager.LoadScene("Scenes/TerrainMap");
+        SceneManager.LoadScene(nextSceneName);
     }
 
     public void ShowDialogue(DialogObject dialogueObject)
