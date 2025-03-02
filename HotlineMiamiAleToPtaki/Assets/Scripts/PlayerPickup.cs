@@ -12,6 +12,11 @@ public class PlayerPickup : MonoBehaviour
     [SerializeField]
     GameObject itemHolder;
 
+    private bool isDead = false;
+
+    public void setDead(){
+        isDead = true;
+    }
 
     void Update()
     {

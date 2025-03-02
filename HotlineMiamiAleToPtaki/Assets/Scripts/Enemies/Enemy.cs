@@ -79,14 +79,6 @@ public class Enemy : MonoBehaviour
         GetComponentInChildren<PlayerRadiusDetection>().UpdateDetectionRadius(detectionRadius);
     }
 
-    private void Patrol(){
-        if(Vector2.Distance(transform.position, patrolPoints[currentPatrolIndex].position) < 0.5f)
-        {
-            currentPatrolIndex = (currentPatrolIndex + 1) % patrolPoints.Count;
-        }
-        transform.position = Vector2.MoveTowards(transform.position, patrolPoints[currentPatrolIndex].position, movementSpeed * Time.deltaTime);
-    }
-
     public void OnEnteredGroatsDetectionRadius(Transform groatsTransform)
     {
         if(stateController.currentState is ChasingPlayerState)
