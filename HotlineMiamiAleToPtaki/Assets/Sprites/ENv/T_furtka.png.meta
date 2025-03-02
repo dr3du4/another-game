@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      T_furtka_0: 1219625559021994643
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

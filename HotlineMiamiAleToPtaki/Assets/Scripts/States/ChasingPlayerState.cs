@@ -4,16 +4,14 @@ public class ChasingPlayerState : IState
 {
     Transform playerTransform;
     Transform transform;
-    float movementSpeed;
     Enemy enemy;
-    float attackRadius;
+    float attackRadius = 3f;
 
-    public ChasingPlayerState(Transform transform, Transform playerTransform, float moveSpeed, Enemy enemy)
+    public ChasingPlayerState(Transform transform, Transform playerTransform, Enemy enemy)
     {
         this.playerTransform = playerTransform;
         this.transform = transform;
         this.enemy = enemy;
-        movementSpeed = moveSpeed;
     }
     public void OnEnter()
     {
@@ -26,7 +24,9 @@ public class ChasingPlayerState : IState
         {
             enemy.TryAttackPlayer(playerTransform);
         }
-        transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, movementSpeed * Time.deltaTime);
+        else{
+            enemy.Move(playerTransform);
+        }
     }
 
     public void OnExit()

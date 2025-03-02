@@ -4,6 +4,7 @@ using UnityEngine.Scripting.APIUpdating;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEditor.ShaderGraph.Internal;
+using System.Linq;
 
 [RequireComponent(typeof(StateController))]
 public class Enemy : MonoBehaviour
@@ -16,8 +17,6 @@ public class Enemy : MonoBehaviour
     List<Transform> patrolPoints;
     [SerializeField]
     float movementSpeed = 5f;
-
-    int currentPatrolIndex = 0;
     
     [Header("Detections")]
     [SerializeField]
@@ -26,7 +25,6 @@ public class Enemy : MonoBehaviour
     [Header("Attacks")]
     [SerializeField]
     float attackCooldown = 3f;
-    bool attackOnCooldown = false;
     bool isAttacking = false;
 
     [SerializeField]
@@ -44,15 +42,24 @@ public class Enemy : MonoBehaviour
 
     StateController stateController;
 
+    private Animator animator;
+
+    private PlayerDamagingArea playerDamagingArea;
+
+    [SerializeField]
+    Collider2D collisionCollider;
+
     public bool isDead { get; private set; }
     void Start()
     {
         UpdateDetectionRadius();
         stateController = GetComponent<StateController>();
+        animator = GetComponent<Animator>();
+        playerDamagingArea = GetComponentInChildren<PlayerDamagingArea>();
 
         if (patrolPoints.Count > 0) 
         {
-            PatrolState patrolState = new PatrolState(transform, patrolPoints, movementSpeed);
+            PatrolState patrolState = new PatrolState(transform, patrolPoints);
             stateController.ChangeState(patrolState);
             defaultState = patrolState;
         } 
@@ -63,9 +70,9 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        if (!isAttacking){
+        /*if (!isAttacking){
             MovementUpdate();
-        }
+        }*/
     }
 
     private void MovementUpdate(){
@@ -109,39 +116,31 @@ public class Enemy : MonoBehaviour
 
     public void OnPlayerEnteredDetectionRadius(Transform playerTransform)
     {
-        stateController.ChangeState(new ChasingPlayerState(transform, playerTransform, movementSpeed, this));
-    }
-
-    public void OnPlayerEnteredAttackRadius(Transform playerTransform)
-    {
-        if(!attackOnCooldown)
-        {
-            StartCoroutine(AttackCooldown());
-            Attack(playerTransform);
-        }
+        stateController.ChangeState(new ChasingPlayerState(transform, playerTransform, this));
     }
 
     public IState GetCurrentState(){
         return stateController.currentState;
     }
 
-    private IEnumerator AttackCooldown()
-    {
-        attackOnCooldown = true;
-        yield return new WaitForSeconds(attackCooldown);
-        attackOnCooldown = false;
-    }
-
     protected virtual void Attack(Transform playerTransform)
     {
-        Debug.Log("Attacking player");
-        //play attack animation
+        
+        StartCoroutine(LockMovementForAttack(GetAttackAnimationLength()));
+        
     }
 
-    protected IEnumerable LockMovementForAttack(float attackTime){
-        isAttacking = true;
+    private float GetAttackAnimationLength(){
+        AnimationClip clip = animator.runtimeAnimatorController.animationClips.Where(anim => anim.name == "Attack").FirstOrDefault();
+        return clip.length;
+    }
+
+    protected IEnumerator LockMovementForAttack(float attackTime){
+        animator.SetBool("IsAttacking", true);
+        isAttacking = true;    
         yield return new WaitForSeconds(attackTime);
         isAttacking = false;
+        animator.SetBool("IsAttacking", false);
     }
 
     public void RegisterHit()
@@ -151,8 +150,9 @@ public class Enemy : MonoBehaviour
 
     public void TryAttackPlayer(Transform playerTransform)
     {
-        if(!attackOnCooldown)
+        if(!isAttacking)
         {
+            Debug.Log("Attacking player");
             Attack(playerTransform);
         }
 
@@ -161,20 +161,25 @@ public class Enemy : MonoBehaviour
     protected virtual void Die()
     {
         GetComponent<Collider2D>().enabled = false;
+        collisionCollider.enabled = false;
         ParticleSystem blood = GetComponentInChildren<ParticleSystem>();
         blood.Play();
         Debug.Log("Enemy died");
         stateController.ChangeState(new DeadState(this));
         isDead = true;
-        SoundManager.Instance.PlaySound(deathSound, transform);
+        animator.SetBool("IsDead", true);
+        animator.enabled = false;
+        
         // disable animations
         BerserkManager.Instance.RegisterKill();
         if(deadSprite != null){
+            Debug.Log("Setting dead sprite");
             GetComponentInChildren<SpriteRenderer>().sprite = deadSprite;
         }
         else{
             Debug.LogError("Dead sprite not set - not game breaking but please set it");
         }
+        SoundManager.Instance.PlaySound(deathSound, transform);
         StartCoroutine(StopParticleEmission(blood, 0.07f));
     }
 
@@ -193,5 +198,18 @@ public class Enemy : MonoBehaviour
         }
 
         particleSystem.SetParticles(particles, particleCount);
+    }
+
+    public void Move(Transform target){
+        if (transform.position.x - target.position.x < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        animator.SetBool("IsMoving", true);
+        transform.position = Vector2.MoveTowards(transform.position, target.position, movementSpeed * Time.deltaTime);
     }
 }

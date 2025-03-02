@@ -35,4 +35,12 @@ public class GameManager : MonoBehaviour
             Debug.Log("No more levels!");
         }
     }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            RestartLevel();
+        }
+    }
 }
