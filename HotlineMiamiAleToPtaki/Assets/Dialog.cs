@@ -25,9 +25,6 @@ public class dialog : MonoBehaviour
        
         ShowDialogueChange(testDialogue);
         
-        
-    
-    
     }
 
     private void ShowDialogueChange(DialogObject dialogueObject)
@@ -48,7 +45,7 @@ public class dialog : MonoBehaviour
 
         }
         CloseDialogueBox();
-        SceneManager.LoadScene("Scenes/TerrainMap");
+        //SceneManager.LoadScene("Scenes/TerrainMap");
     }
 
     public void ShowDialogue(DialogObject dialogueObject)
@@ -68,7 +65,7 @@ public class dialog : MonoBehaviour
 
         }
         CloseDialogueBox();
-        SceneManager.LoadScene("Scenes/TerrainMap");
+        //SceneManager.LoadScene("Scenes/TerrainMap");
     }
 
     private void CloseDialogueBox(){
