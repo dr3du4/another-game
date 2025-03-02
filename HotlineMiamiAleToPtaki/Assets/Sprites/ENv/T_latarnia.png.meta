@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      T_latarnia_0: 990372128953810386
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

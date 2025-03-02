@@ -234,7 +234,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      T_kamienie_przejscie_0: -2718297977927105725
+      T_kamienie_przejscie_1: 1822126878690049538
+      T_kamienie_przejscie_2: 5932057763485576919
+      T_kamienie_przejscie_3: 1376783926489988516
+      T_kamienie_przejscie_4: 2578417274317393735
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
