@@ -46,6 +46,9 @@ public class Enemy : MonoBehaviour
 
     private PlayerDamagingArea playerDamagingArea;
 
+    [SerializeField]
+    Collider2D collisionCollider;
+
     public bool isDead { get; private set; }
     void Start()
     {
@@ -158,6 +161,7 @@ public class Enemy : MonoBehaviour
     protected virtual void Die()
     {
         GetComponent<Collider2D>().enabled = false;
+        collisionCollider.enabled = false;
         ParticleSystem blood = GetComponentInChildren<ParticleSystem>();
         blood.Play();
         Debug.Log("Enemy died");

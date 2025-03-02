@@ -167,7 +167,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: -1136385448563827200, guid: 4d5e0c812b4e5f846864a006340f85f9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -252,6 +252,7 @@ MonoBehaviour:
   attackCooldown: 3
   deadSprite: {fileID: 6565838977902035736, guid: e00dfd257f8453f44ab722f35d6245c2, type: 3}
   deathSound: {fileID: 0}
+  collisionCollider: {fileID: 4612212745904714042}
 --- !u!50 &7774657062564359886
 Rigidbody2D:
   serializedVersion: 5
@@ -5506,7 +5507,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
