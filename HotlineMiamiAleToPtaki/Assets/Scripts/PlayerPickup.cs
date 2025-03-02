@@ -12,6 +12,15 @@ public class PlayerPickup : MonoBehaviour
     [SerializeField]
     GameObject itemHolder;
 
+    [SerializeField]
+    float useCooldown = 2f;
+    bool canUse = true;
+
+    private bool isDead = false;
+
+    public void setDead(){
+        isDead = true;
+    }
 
     void Update()
     {
@@ -25,10 +34,16 @@ public class PlayerPickup : MonoBehaviour
             currentItem.tryThrowItem(throwDirection, throwForce,0);
             currentItem = null;
         }
-        else if (currentItem != null && Input.GetMouseButtonDown(0))
+        else if (currentItem != null && Input.GetMouseButtonDown(0) && canUse)
         {
-            currentItem.tryUseItem();
+            canUse = false;
+            Invoke("resetUse", useCooldown);
+            currentItem.UseItem();
         }
+    }
+
+    private void resetUse(){
+        canUse = true;
     }
 
     private void TryPickUp()
@@ -56,6 +71,16 @@ public class PlayerPickup : MonoBehaviour
         item.transform.localRotation = Quaternion.identity;
         //item.transform.localRotation = Quaternion.Euler(0, 0, 45);
         Debug.Log("Podniesiono: " + item.itemName);
+    }
+
+    public void StartBerserk(){
+        throwForce *= 1.4f;
+        useCooldown /= 1.4f;
+    }
+
+    public void EndBerserk(){
+        throwForce /= 1.4f;
+        useCooldown *= 1.4f;
     }
 }
 

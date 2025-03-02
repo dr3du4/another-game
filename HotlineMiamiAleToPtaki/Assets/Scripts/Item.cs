@@ -6,12 +6,9 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Item : MonoBehaviour
 {
-    [SerializeField]
-    float useCooldown = 2f;
-
     protected DamageArea damageArea;
 
-    bool canUse = true;
+   
     public string itemName;
     public bool isHeld = false;
     public bool isThrowed = false;
@@ -37,23 +34,15 @@ public class Item : MonoBehaviour
         return !isHeld && !isThrowed;
     }
 
-    public void tryUseItem()
+    public void UseItem()
     {
-        if(canUse){
-            itemUse();
-            Debug.Log("durability: " + durability);
-            durability--;
-            if (durability <= 0)
-            {
-                DestroyItem();
-            }
-            canUse = false;
-            Invoke("resetUse", useCooldown);
+        itemUse();
+        Debug.Log("durability: " + durability);
+        durability--;
+        if (durability <= 0)
+        {
+            DestroyItem();
         }
-    }
-
-    private void resetUse(){
-        canUse = true;
     }
 
     protected virtual void itemUse()
