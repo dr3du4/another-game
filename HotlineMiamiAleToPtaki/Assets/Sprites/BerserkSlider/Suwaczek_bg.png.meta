@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Suwaczek_bg_0: 8988342451176653445
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

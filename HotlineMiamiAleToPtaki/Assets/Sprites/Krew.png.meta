@@ -334,7 +334,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Krew_0: 6312923667056637535
+      Krew_1: -1997099004055735759
+      Krew_2: 3669116396712813226
+      Krew_3: -2390329863963548680
+      Krew_4: 4891758973224193157
+      Krew_5: -6629991130007049321
+      Krew_6: -800159457637600658
+      Krew_7: -1193642199159282108
+      Krew_8: 2852892526378600771
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      szczur 1_0: -4950349251517307520
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
