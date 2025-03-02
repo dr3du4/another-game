@@ -84,8 +84,8 @@ public class Item : MonoBehaviour
     }
 
     private IEnumerator ReduceVelocity(Rigidbody2D rb){
-        while(rb.linearVelocity.magnitude > 2f){
-            rb.linearVelocity *= 0.9f;
+        while(rb.linearVelocity.magnitude > 10f){
+            rb.linearVelocity *= 0.8f;
             yield return new WaitForSeconds(0.1f);
         }
         rb.linearVelocity = Vector2.zero;

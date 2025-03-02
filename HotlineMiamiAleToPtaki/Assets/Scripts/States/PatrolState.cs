@@ -7,14 +7,15 @@ public class PatrolState : IState
     Transform transform;
 
     int currentPatrolIndex;
-    float movementSpeed;
 
-    public PatrolState(Transform transform, List<Transform> patrolPoints, float moveSpeed)
+    Enemy enemy;
+
+    public PatrolState(Transform transform, List<Transform> patrolPoints)
     {
         this.patrolPoints = patrolPoints;
         currentPatrolIndex = 0;
-        movementSpeed = moveSpeed;
         this.transform = transform;
+        enemy = transform.GetComponent<Enemy>();
     }
     public void OnEnter()
     {
@@ -27,7 +28,7 @@ public class PatrolState : IState
         {
             currentPatrolIndex = (currentPatrolIndex + 1) % patrolPoints.Count;
         }
-        transform.position = Vector2.MoveTowards(transform.position, patrolPoints[currentPatrolIndex].position, movementSpeed * Time.deltaTime);
+        enemy.Move(patrolPoints[currentPatrolIndex]);
     }
 
     public void OnExit()

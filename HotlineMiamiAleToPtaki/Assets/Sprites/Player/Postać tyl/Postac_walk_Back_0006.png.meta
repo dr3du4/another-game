@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Postac_walk_Back_0006_0: 5293632602558914109
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

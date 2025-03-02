@@ -284,7 +284,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      T_domek_0: -910017185229018558
+      T_domek_1: -6303274477816778526
+      T_domek_2: -2194217774356337135
+      T_domek_3: 7488807097901413322
+      T_domek_4: -904081222581050356
+      T_domek_5: -192790249003360937
+      T_domek_6: 3287970355905606109
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

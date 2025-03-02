@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      T_domki 1_0: 7145053340375954071
+      T_domki 1_1: -4331202656257146826
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

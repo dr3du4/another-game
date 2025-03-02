@@ -11,9 +11,16 @@ public class PlayerRadiusDetection : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            enemy.OnPlayerEnteredDetectionRadius(other.transform);
+            Vector2 direction = other.transform.position - transform.position;
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, direction.magnitude, LayerMask.GetMask("Wall")); 
+            
+            // If no wall is detected, allow detection
+            if (!hit.collider)
+            {
+                enemy.OnPlayerEnteredDetectionRadius(other.transform);
+            }
         }
     }
 

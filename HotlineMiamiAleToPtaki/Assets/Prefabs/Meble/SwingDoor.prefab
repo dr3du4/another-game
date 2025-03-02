@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1806707596020397562}
   - component: {fileID: 9131916479760608801}
   - component: {fileID: 5369211452643298705}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DamageArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1430194694397633833}
   - component: {fileID: 812728978345928817}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SwingDoor
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
@@ -154,7 +154,7 @@ GameObject:
   - component: {fileID: 6539184718762679565}
   - component: {fileID: 8252225973489580981}
   - component: {fileID: 6362553749549175197}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,7 +220,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: -2385693911924338116, guid: 15156a4a4b9aa3545a59c0d695841d0e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -299,7 +299,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3591042006862163398}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hinge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
