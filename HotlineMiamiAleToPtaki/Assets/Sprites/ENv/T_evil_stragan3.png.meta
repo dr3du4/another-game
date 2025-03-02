@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      T_evil_stragan3_0: 1130018658401430355
+      T_evil_stragan3_1: -8100280991839621503
+      T_evil_stragan3_2: 6664430040447285348
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

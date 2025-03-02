@@ -2,12 +2,19 @@ using UnityEngine;
  using System.Collections.Generic;
 using UnityEngine.UI;
 using System.Linq;
+using System.Collections;
 
 public class BerserkManager : MonoBehaviour
 {
     public static BerserkManager Instance;
     
     [SerializeField] private Slider killCounterSlider;
+
+    [SerializeField]
+    Image berserkIcon;
+
+    [SerializeField]
+    AudioClip berserkSound;
 
     private Queue<float> killTimestamps = new Queue<float>(); // Kolejka przechowująca czas zabójstw
     private float killResetTime = 10f; // Czas trzymania zabójstw na pasku
@@ -23,6 +30,7 @@ public class BerserkManager : MonoBehaviour
 
     void Awake()
     {
+        berserkIcon.enabled = false;
         if (Instance == null)
         {
             Instance = this;
@@ -76,6 +84,9 @@ public class BerserkManager : MonoBehaviour
     }
 
     private void ActivateBerserk(){
+        berserkIcon.enabled = true;
+        StartCoroutine(FadeInBerserkImage());
+        SoundManager.Instance.PlaySound(berserkSound, transform);
         alreadyBerserk = true;
         Debug.Log("Berserk activated");
         playerMovement.StartBerserk();
@@ -98,5 +109,28 @@ public class BerserkManager : MonoBehaviour
             berserkPower = 0;
             EndBerserk();
         }
+    }
+
+    private IEnumerator FadeOutBerserkImage(){
+        float fadeTime = 1f;
+        float elapsedTime = 0f;
+        while(elapsedTime < fadeTime){
+            berserkIcon.color = new Color(1, 1, 1, Mathf.Lerp(1, 0, elapsedTime/fadeTime));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        berserkIcon.enabled = false;
+    }
+
+    private IEnumerator FadeInBerserkImage(){
+        float fadeTime = 0.5f;
+        float elapsedTime = 0f;
+        while(elapsedTime < fadeTime){
+            berserkIcon.color = new Color(1, 1, 1, Mathf.Lerp(0, 1, elapsedTime/fadeTime));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        yield return new WaitForSeconds(1f);
+        StartCoroutine(FadeOutBerserkImage());
     }
 }
