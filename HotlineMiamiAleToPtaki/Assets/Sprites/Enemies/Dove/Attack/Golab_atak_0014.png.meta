@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Golab_atak_0014_0: 5241559169608096528
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

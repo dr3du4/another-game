@@ -22,6 +22,9 @@ public class ChasingPlayerState : IState
     {
         if(Vector2.Distance(transform.position, playerTransform.position) <= attackRadius)
         {
+            if(playerTransform.GetComponent<playerMovement>().isDead){
+                return;
+            }
             enemy.TryAttackPlayer(playerTransform);
         }
         else{

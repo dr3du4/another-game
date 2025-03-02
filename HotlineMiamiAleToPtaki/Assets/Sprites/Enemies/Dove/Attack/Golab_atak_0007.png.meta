@@ -284,7 +284,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Golab_atak_0007_0: -4444247913678414609
+      Golab_atak_0007_1: -5907362954939110009
+      Golab_atak_0007_2: 5623378314443795890
+      Golab_atak_0007_3: 5746978036474011928
+      Golab_atak_0007_4: 6361688313931020364
+      Golab_atak_0007_5: -8190479942204693759
+      Golab_atak_0007_6: -6406703769891488405
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

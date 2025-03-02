@@ -24,6 +24,7 @@ public class PlayerPickup : MonoBehaviour
 
     void Update()
     {
+        if(isDead) return;
         if (currentItem == null && Input.GetKeyDown(KeyCode.Space))
         {
             TryPickUp();

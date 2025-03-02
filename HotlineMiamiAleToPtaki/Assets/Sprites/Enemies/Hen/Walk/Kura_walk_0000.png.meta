@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Kura_walk_0000_0: 7457182404940686901
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
