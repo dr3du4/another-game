@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adea39b9785c44ca82ebd82c2963da72, type: 3}
+  m_Name: First
+  m_EditorClassIdentifier: 
+  dialogue:
+  - "Je tam. My\u015Bli, i\u017Ce go niy widz\u014Dm. Ale wiem. \xD4ni dycki \xF4gl\u014Dndaj\u014Dm.
+    W nocy. W czasie dnia. Kedy \u015Bpiyj\u014Dm. Kedy jedz\u014Dm. Nawet kedy...
+    po\u015Bwiyncaj\u014Dm sie rzykaniu. Gapi\u014Dm sie. Jakby znali moje my\u015Bli..."
+  - To nie urojenia. To prawda.
+  - "Tak... Tak... Widz\u014Dm ci, przekl\u014Dn\u014Dny syn kurczaka. Je\u017Ali
+    to wojna, niech to bydzie wojna!"

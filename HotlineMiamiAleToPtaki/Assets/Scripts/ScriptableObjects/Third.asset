@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adea39b9785c44ca82ebd82c2963da72, type: 3}
+  m_Name: Third
+  m_EditorClassIdentifier: 
+  dialogue:
+  - "Niy ma k\u014D\u0144ca... Niy ma k\u014D\u0144ca... \xD4trzymuj\u014Dm gowy
+    i \xF4ne durch \xF4gl\u014Dndaj\u014Dm... Za murami, za drzewami... we snach...
+    we my\u015Blach! "
+  - "Mo\u017Cno... Mo\u017Cno to niy styknie... Mo\u017Cno niy s\u014Dm ino cia\u0142ym...
+    Mo\u017Cno s\u014Dm czym\u015B barzij.."
