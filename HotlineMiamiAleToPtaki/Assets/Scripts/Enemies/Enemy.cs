@@ -67,9 +67,9 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        if (!isAttacking){
+        /*if (!isAttacking){
             MovementUpdate();
-        }
+        }*/
     }
 
     private void MovementUpdate(){
@@ -113,7 +113,7 @@ public class Enemy : MonoBehaviour
 
     public void OnPlayerEnteredDetectionRadius(Transform playerTransform)
     {
-        stateController.ChangeState(new ChasingPlayerState(transform, playerTransform));
+        stateController.ChangeState(new ChasingPlayerState(transform, playerTransform, this));
     }
 
     public IState GetCurrentState(){
@@ -163,15 +163,19 @@ public class Enemy : MonoBehaviour
         Debug.Log("Enemy died");
         stateController.ChangeState(new DeadState(this));
         isDead = true;
-        SoundManager.Instance.PlaySound(deathSound, transform);
+        animator.SetBool("IsDead", true);
+        animator.enabled = false;
+        
         // disable animations
         BerserkManager.Instance.RegisterKill();
         if(deadSprite != null){
+            Debug.Log("Setting dead sprite");
             GetComponentInChildren<SpriteRenderer>().sprite = deadSprite;
         }
         else{
             Debug.LogError("Dead sprite not set - not game breaking but please set it");
         }
+        SoundManager.Instance.PlaySound(deathSound, transform);
         StartCoroutine(StopParticleEmission(blood, 0.07f));
     }
 

@@ -7,11 +7,11 @@ public class ChasingPlayerState : IState
     Enemy enemy;
     float attackRadius = 3f;
 
-    public ChasingPlayerState(Transform transform, Transform playerTransform)
+    public ChasingPlayerState(Transform transform, Transform playerTransform, Enemy enemy)
     {
         this.playerTransform = playerTransform;
         this.transform = transform;
-        enemy = transform.GetComponent<Enemy>();
+        this.enemy = enemy;
     }
     public void OnEnter()
     {
