@@ -13,6 +13,12 @@ public class SwingDoor : MonoBehaviour
     private bool isMoving = false;
     private float targetAngle = 0f;
 
+    [SerializeField]
+    private AudioClip openSound;
+
+    [SerializeField]
+    private AudioClip closeSound;
+
     private void Start()
     {
         originalRotation = door.rotation;
@@ -40,6 +46,12 @@ public class SwingDoor : MonoBehaviour
         float angleDirection = dot > 0 ? -1 : 1;
 
         targetAngle = Mathf.Clamp(currentAngle + (angleDirection * maxAngle), -maxAngle, maxAngle);
+        if(targetAngle == 0){
+            SoundManager.Instance.PlaySound(closeSound, transform);
+        }
+        else{
+            SoundManager.Instance.PlaySound(openSound, transform);
+        }
     }
 
     private void Update()

@@ -13,6 +13,8 @@ public class playerMovement : MonoBehaviour
     private PlayerPickup playerPickup;
     [SerializeField]
     Sprite deadPlayerSprite;
+    [SerializeField]
+    AudioClip deathSound;
 
     void Start()
     {
@@ -60,6 +62,7 @@ public class playerMovement : MonoBehaviour
         Debug.Log("Player Hit and died");
         isDead = true;
         playerPickup.setDead();
+        SoundManager.Instance.PlaySound(deathSound, transform);
         Destroy(animator);
         ParticleSystem blood = GetComponentInChildren<ParticleSystem>();
         blood.Play();
