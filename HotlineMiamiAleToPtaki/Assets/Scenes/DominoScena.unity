@@ -6633,6 +6633,7 @@ MonoBehaviour:
   detectionRadius: 3
   attackCooldown: 3
   deadSprite: {fileID: -2050288435, guid: baaf4e0623e2f9042ac71dc509876e5a, type: 3}
+  deathSound: {fileID: 0}
 --- !u!212 &1884869746
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6927,6 +6928,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8792128040628590812, guid: 0603c1cee411a7847bc13c37625f9c5a, type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 02d824d79158b594a8cbfa857d167391, type: 3}
+    - target: {fileID: 8792128040628590812, guid: 0603c1cee411a7847bc13c37625f9c5a, type: 3}
       propertyPath: detectionRadius
       value: 0
       objectReference: {fileID: 0}
@@ -7061,6 +7066,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3432767349859309112, guid: 5da874241f176664fbad32abe35a2caa, type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c1cf4668e5eaeee40ba214f50156f59d, type: 3}
     - target: {fileID: 3432767349859309112, guid: 5da874241f176664fbad32abe35a2caa, type: 3}
       propertyPath: movementSpeed
       value: 3

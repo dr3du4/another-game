@@ -31,6 +31,10 @@ public class Enemy : MonoBehaviour
 
     [SerializeField]
     Sprite deadSprite;
+
+    [Header("Sounds")]
+    [SerializeField]
+    AudioClip deathSound;
     
     Transform playerTransform;
 
@@ -162,6 +166,7 @@ public class Enemy : MonoBehaviour
         Debug.Log("Enemy died");
         stateController.ChangeState(new DeadState(this));
         isDead = true;
+        SoundManager.Instance.PlaySound(deathSound, transform);
         // disable animations
         if(deadSprite != null){
             GetComponentInChildren<SpriteRenderer>().sprite = deadSprite;
