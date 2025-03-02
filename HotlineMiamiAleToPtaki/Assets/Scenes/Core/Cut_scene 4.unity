@@ -305,15 +305,15 @@ PrefabInstance:
     - target: {fileID: 405326316474524267, guid: 57403ed127961d447880e145d0e3f5bd, type: 3}
       propertyPath: m_Resource
       value: 
-      objectReference: {fileID: 8300000, guid: b45ceeb3fb3156c46894041793c61a8b, type: 3}
+      objectReference: {fileID: 8300000, guid: 2405cd1933a1c924a8ce9bba33bb74a7, type: 3}
     - target: {fileID: 405326316474524267, guid: 57403ed127961d447880e145d0e3f5bd, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: b45ceeb3fb3156c46894041793c61a8b, type: 3}
+      objectReference: {fileID: 8300000, guid: 2405cd1933a1c924a8ce9bba33bb74a7, type: 3}
     - target: {fileID: 938574665088098026, guid: 57403ed127961d447880e145d0e3f5bd, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1797309693652561850, guid: 72abc0a5ce30c304bb71ba12fecdbbca, type: 3}
+      objectReference: {fileID: -5158806426639244679, guid: eff41e43719899f42b4c9a59725c2b0c, type: 3}
     - target: {fileID: 3591330202990937069, guid: 57403ed127961d447880e145d0e3f5bd, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -393,6 +393,22 @@ PrefabInstance:
     - target: {fileID: 3591330202990937069, guid: 57403ed127961d447880e145d0e3f5bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4835421341033381380, guid: 57403ed127961d447880e145d0e3f5bd, type: 3}
+      propertyPath: testDialogue
+      value: 
+      objectReference: {fileID: 11400000, guid: 7084f552d078816478c152e499b1fdc1, type: 2}
+    - target: {fileID: 4835421341033381380, guid: 57403ed127961d447880e145d0e3f5bd, type: 3}
+      propertyPath: nextSceneName
+      value: End_Screen
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271367864080310901, guid: 57403ed127961d447880e145d0e3f5bd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271367864080310901, guid: 57403ed127961d447880e145d0e3f5bd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -415
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
