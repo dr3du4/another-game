@@ -168,6 +168,7 @@ public class Enemy : MonoBehaviour
         isDead = true;
         SoundManager.Instance.PlaySound(deathSound, transform);
         // disable animations
+        BerserkManager.Instance.RegisterKill();
         if(deadSprite != null){
             GetComponentInChildren<SpriteRenderer>().sprite = deadSprite;
         }

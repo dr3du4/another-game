@@ -87,4 +87,12 @@ public class playerMovement : MonoBehaviour
 
         particleSystem.SetParticles(particles, particleCount);
     }
+
+    public void StartBerserk(){
+        moveSpeed *= 1.4f;
+    }
+
+    public void EndBerserk(){
+        moveSpeed /= 1.4f;
+    }
 }
