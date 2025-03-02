@@ -7,7 +7,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("GameScene"); // Zamień na nazwę swojej sceny gry
+        SceneManager.LoadScene("Cut_scene 1"); // Zamień na nazwę swojej sceny gry
     }
 
     public void OpenOptions()
